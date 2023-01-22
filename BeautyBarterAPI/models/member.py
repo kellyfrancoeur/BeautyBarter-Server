@@ -5,7 +5,7 @@ class Member(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_member')
     profession = models.ForeignKey("Profession", null=True, blank=True, on_delete=models.CASCADE, related_name='member_profession')
-    license_state= models.CharField("LicenseState", null=True, blank=True, on_delete=models.CASCADE, related_name='member_license_state')
+    license_state= models.ForeignKey("LicenseState", null=True, blank=True, on_delete=models.CASCADE, related_name='member_license_state')
     license_number = models.IntegerField(null=True, blank=True)
     link_to_site = models.CharField(max_length=500)
     about = models.CharField(max_length=1000)
