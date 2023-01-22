@@ -1,0 +1,1 @@
+from .new_member_registration_form import NewMemberRegistrationForm
