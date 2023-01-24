@@ -1,1 +1,2 @@
 from .new_member_registration_form import NewMemberRegistrationForm
+from .admin_registration_form import AdminRegistrationForm

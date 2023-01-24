@@ -1,0 +1,20 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$rv8lWMoWx3Kw5RCQJdTiX4$c42odEZ3hje8fM+yQrwEhq92xb3Oi8eF12BbK1aCYWY=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "BBManager",
+            "first_name": "Burt",
+            "last_name": "Macklin",
+            "email": "bmacklin@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-01-24 22:31:03.308874",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]
