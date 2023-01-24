@@ -1,0 +1,11 @@
+[
+    {
+        "model": "BeautyBarterAPI.admin",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "position": "Lead Manager",
+            "img": "www.face.com"
+        }
+    }
+]

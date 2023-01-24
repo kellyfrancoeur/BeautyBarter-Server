@@ -1,0 +1,373 @@
+[
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 1,
+        "fields": {
+            "state": "AL"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 2,
+        "fields": {
+            "state": "AK"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 3,
+        "fields": {
+            "state": "AZ"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 4,
+        "fields": {
+            "state": "AR"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 5,
+        "fields": {
+            "state": "CA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 6,
+        "fields": {
+            "state": "CO"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 7,
+        "fields": {
+            "state": "CT"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 8,
+        "fields": {
+            "state": "DE"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 9,
+        "fields": {
+            "state": "DC"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 10,
+        "fields": {
+            "state": "FL"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 11,
+        "fields": {
+            "state": "GA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 12,
+        "fields": {
+            "state": "HI"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 13,
+        "fields": {
+            "state": "ID"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 14,
+        "fields": {
+            "state": "IL"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 15,
+        "fields": {
+            "state": "IN"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 16,
+        "fields": {
+            "state": "IA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 17,
+        "fields": {
+            "state": "KS"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 18,
+        "fields": {
+            "state": "KY"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 19,
+        "fields": {
+            "state": "LA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 20,
+        "fields": {
+            "state": "ME"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 21,
+        "fields": {
+            "state": "MD"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 22,
+        "fields": {
+            "state": "MA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 23,
+        "fields": {
+            "state": "MI"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 24,
+        "fields": {
+            "state": "MN"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 25,
+        "fields": {
+            "state": "MS"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 26,
+        "fields": {
+            "state": "MO"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 27,
+        "fields": {
+            "state": "MT"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 28,
+        "fields": {
+            "state": "NE"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 29,
+        "fields": {
+            "state": "NV"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 30,
+        "fields": {
+            "state": "NH"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 31,
+        "fields": {
+            "state": "NJ"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 32,
+        "fields": {
+            "state": "NM"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 33,
+        "fields": {
+            "state": "NY"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 34,
+        "fields": {
+            "state": "NC"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 35,
+        "fields": {
+            "state": "ND"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 36,
+        "fields": {
+            "state": "OH"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 37,
+        "fields": {
+            "state": "OK"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 38,
+        "fields": {
+            "state": "OR"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 39,
+        "fields": {
+            "state": "PA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 40,
+        "fields": {
+            "state": "PR"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 41,
+        "fields": {
+            "state": "RI"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 42,
+        "fields": {
+            "state": "SC"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 43,
+        "fields": {
+            "state": "SD"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 44,
+        "fields": {
+            "state": "TN"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 45,
+        "fields": {
+            "state": "TX"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 46,
+        "fields": {
+            "state": "UT"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 47,
+        "fields": {
+            "state": "VT"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 48,
+        "fields": {
+            "state": "VI"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 49,
+        "fields": {
+            "state": "VA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 50,
+        "fields": {
+            "state": "WA"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 51,
+        "fields": {
+            "state": "WV"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 52,
+        "fields": {
+            "state": "WI"
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.licensestate",
+        "pk": 53,
+        "fields": {
+            "state": "WY"
+        }
+    }
+]

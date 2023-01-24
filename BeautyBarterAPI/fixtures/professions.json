@@ -1,0 +1,58 @@
+[
+    {
+        "model": "BeautyBarterAPI.profession",
+        "pk": 1,
+        "fields": {
+            "profession": "Cosmetologist",
+            "admin": 1
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.profession",
+        "pk": 2,
+        "fields": {
+            "profession": "Barber",
+            "admin": 1
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.profession",
+        "pk": 3,
+        "fields": {
+            "profession": "Massage Therapist",
+            "admin": 1
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.profession",
+        "pk": 4,
+        "fields": {
+            "profession": "Aesthetician",
+            "admin": 1
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.profession",
+        "pk": 5,
+        "fields": {
+            "profession": "Nail Artist",
+            "admin": 1
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.profession",
+        "pk": 6,
+        "fields": {
+            "profession": "Lash Artist",
+            "admin": 1
+        }
+    },
+    {
+        "model": "BeautyBarterAPI.profession",
+        "pk": 7,
+        "fields": {
+            "profession": "Tattoo Artist",
+            "admin": 1
+        }
+    }
+]

@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from BeautyBarterAPI.models import Member
 
 class NewMemberRegistrationForm(UserCreationForm):
     profession = forms.ChoiceField(choices=[
@@ -76,5 +77,5 @@ class NewMemberRegistrationForm(UserCreationForm):
     portfolio_img = forms.CharField(max_length=1000)
 
     class Meta:
-        model = User
-        fields = ('username', 'email', 'password', 'profession', 'license_state', 'license_number', 'link_to_site', 'about', 'interested_in', 'willing_to_trade', 'img', 'porfolio_img')
+        model = Member
+        fields = ('profession', 'license_state', 'license_number', 'link_to_site', 'about', 'interested_in', 'willing_to_trade', 'img', 'portfolio_img')
