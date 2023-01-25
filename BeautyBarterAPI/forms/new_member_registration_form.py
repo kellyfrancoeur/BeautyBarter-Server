@@ -1,9 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-# from django.contrib.auth.models import User
-from BeautyBarterAPI.models import Member
+from django.contrib.auth.models import User
+# from BeautyBarterAPI.models import Member
 
 class NewMemberRegistrationForm(UserCreationForm):
+    first_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class':'form-control'}))
+    last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class':'form-control'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
     profession = forms.ChoiceField(choices=[
         ('cosmetologist', 'Cosmetologist'),
         ('barber', 'Barber'),
@@ -69,13 +72,13 @@ class NewMemberRegistrationForm(UserCreationForm):
         ('wy', 'WY')
         ])
     license_number = forms.IntegerField()
-    link_to_site = forms.CharField(max_length=500)
-    about = forms.CharField(max_length=1000)
-    interested_in = forms.CharField(max_length=500)
-    willing_to_trade = forms.CharField(max_length=500)
+    link_to_site = forms.CharField(max_length=500, widget=forms.TextInput(attrs={'class':'form-control'}))
+    about = forms.CharField(max_length=1000, widget=forms.TextInput(attrs={'class':'form-control'}))
+    interested_in = forms.CharField(max_length=500, widget=forms.TextInput(attrs={'class':'form-control'}))
+    willing_to_trade = forms.CharField(max_length=500, widget=forms.TextInput(attrs={'class':'form-control'}))
     img = forms.CharField(max_length=1000)
     portfolio_img = forms.CharField(max_length=1000)
 
     class Meta:
-        model = Member
-        fields = ('profession', 'license_state', 'license_number', 'link_to_site', 'about', 'interested_in', 'willing_to_trade', 'img', 'portfolio_img')
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email', 'password','profession', 'license_state', 'license_number', 'link_to_site', 'about', 'interested_in', 'willing_to_trade', 'img', 'portfolio_img')
