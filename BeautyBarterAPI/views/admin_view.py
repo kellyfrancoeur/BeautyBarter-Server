@@ -35,4 +35,4 @@ class AdminSerializer(serializers.ModelSerializer):
     """JSON serializer for Admin"""
     class Meta:
         model = Admin
-        fields = ('id', 'username', 'email', 'full_name', 'position', 'img',)
+        fields = ('id', 'username', 'email', 'full_name', 'position', 'admin_img',)

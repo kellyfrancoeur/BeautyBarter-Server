@@ -47,4 +47,4 @@ class MemberSerializer(serializers.ModelSerializer):
     """JSON serializer for Bourbon User"""
     class Meta:
         model = Member
-        fields = ('id', 'username', 'email','full_name', 'profession', 'license_state', 'license_number', 'link_to_site', 'about', 'interested_in', 'willing_to_trade', 'img', 'portfolio_img',)
+        fields = ('id', 'username', 'email','full_name', 'profession', 'license_state', 'license_number', 'link_to_site', 'about', 'interested_in', 'willing_to_trade', 'member_img', 'portfolio_img',)

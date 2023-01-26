@@ -5,7 +5,7 @@ class Admin(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_admin')
     position = models.CharField(max_length=250)
-    img = models.CharField(max_length=1000)
+    admin_img = models.ImageField(upload_to='images/', null=True, blank=True)
 
 
     @property

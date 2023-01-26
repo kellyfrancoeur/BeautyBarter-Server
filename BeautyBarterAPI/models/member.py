@@ -8,10 +8,10 @@ class Member(models.Model):
     license_state= models.ForeignKey("LicenseState", null=True, blank=True, on_delete=models.CASCADE, related_name='member_license_state')
     license_number = models.IntegerField(null=True, blank=True)
     link_to_site = models.URLField('Website Address', blank=True)
-    about = models.CharField(max_length=1000)
+    about = models.TextField(blank=True)
     interested_in = models.CharField(max_length=500)
     willing_to_trade = models.CharField(max_length=500)
-    img = models.CharField(max_length=1000)
+    member_img = models.ImageField(null=True, blank=True, upload_to="images/")
     portfolio_img = models.ForeignKey("MemberPortfolioImages", null=True, blank=True, on_delete=models.CASCADE, related_name='member_portfolio_images')
     approved = models.BooleanField('Approved', default=False)
 

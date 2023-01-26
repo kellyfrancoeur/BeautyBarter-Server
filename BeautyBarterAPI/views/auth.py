@@ -9,7 +9,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from django import forms
 from BeautyBarterAPI.forms import NewMemberRegistrationForm, AdminRegistrationForm
-from BeautyBarterAPI.models import LicenseCheck, Member, Admin, Profession, LicenseState
+from BeautyBarterAPI.models import Member, Admin, Profession, LicenseState
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
