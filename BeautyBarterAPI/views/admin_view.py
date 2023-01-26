@@ -25,10 +25,16 @@ class AdminView(ViewSet):
         Returns:
             Response -- JSON serialized admin user record
         """
+        try:
+            admin = Admin.objects.get(pk=pk)
+            serializer = AdminSerializer(admin, context={'request': request})
+            return Response(serializer.data)
+        
+        except Admin.DoesNotExist as ex:
+            return Response({'message': 'Admin does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
-        admin = Admin.objects.get(pk=pk)
-        serialized = AdminSerializer(admin, context={'request': request})
-        return Response(serialized.data, status=status.HTTP_200_OK)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
 
 
 class AdminSerializer(serializers.ModelSerializer):
