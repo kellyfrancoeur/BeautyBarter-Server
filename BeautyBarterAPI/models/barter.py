@@ -9,6 +9,7 @@ class Barter(models.Model):
     requested_details = models.TextField(blank=True)
     offered_details = models.TextField(blank=True)
     includes_product = models.BooleanField(default=False)
+    products = models.ManyToManyField("Product", through = "BarterProduct")
 
     def __str__(self):
         return self.member.username
@@ -18,3 +19,4 @@ class Barter(models.Model):
     
     def __str__(self):
         return self.service_offered.service
+    

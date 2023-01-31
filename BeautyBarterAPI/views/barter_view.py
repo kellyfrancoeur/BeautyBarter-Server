@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from BeautyBarterAPI.models import Barter, Member, Service
+from BeautyBarterAPI.models import Barter, Member, Service, BarterProduct, Product
 
 class BarterView(ViewSet):
 
@@ -41,42 +41,35 @@ class BarterView(ViewSet):
         Response -- JSON serialized barter instance
         """
         member = Member.objects.get(user=request.auth.user)
+        requested = Service.objects.get(pk=request.data['service_requested'])
+        offered = Service.objects.get(pk=request.data['service_offered'])
 
-        barter = Barter()
+        products = request.data["products"]
+        for product in products:
+            try: 
+                product_offered = Product.objects.get(pk=product)
+            except Product.DoesNotExist:
+                return Response({"message": "Product does not exist"}, status = status.HTTP_404_NOT_FOUND)
 
-        try:
-            barter.date_posted = request.data["date_posted"]
-            barter.requested_details = request.data["requested_details"]
-            barter.offered_details = request.data["offered_details"]
-            barter.includes_product = request.data["includes_product"]
-        
-        except KeyError as ex:
-            return Response({'message': 'Incorrect key was sent in request'}, status=status.HTTP_400_BAD_REQUEST)
-        
-        barter.member = member
+        barter = Barter.objects.create(
+            date_posted = request.data["date_posted"],
+            requested_details = request.data["requested_details"],
+            offered_details = request.data["offered_details"],
+            includes_product = request.data["includes_product"],
+            service_requested = requested,
+            service_offered = offered,
+            member = member 
+        )
 
-        try:
-            requested = Service.objects.get(pk=request.data["service_requested"])
-            barter.service_requested = requested
-        
-        except Service.DoesNotExist as ex:
-            return Response({'message': 'Service provided is not valid'}, status=status.HTTP_400_BAD_REQUEST)
-        
-        try:
-            offered = Service.objects.get(pk=request.data["service_offered"])
-            barter.service_offered = offered
-        
-        except Service.DoesNotExist as ex:
-            return Response({'message': 'Service provided is not valid'}, status=status.HTTP_400_BAD_REQUEST)
-        
-        try:
-            barter.save()
-            serializer = BarterSerializer(barter, context={'request': request})
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        except ValidationError as ex:
-            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
-        except ValueError as ex:
-            return Response({"reason": "You passed some bad data"}, status=status.HTTP_400_BAD_REQUEST)
+        for product in products:
+            product_offered = Product.objects.get(pk=product)
+            barter_product = BarterProduct()
+            barter_product.barter = barter
+            barter_product.product = product_offered
+            barter_product.save() 
+
+        serialized = BarterSerializer(barter)
+        return Response({'message': 'Barter has been posted'}, serialized.data, status=status.HTTP_201_CREATED)
 
     def update(self, request, pk=None):
         """Handle PUT requests for a barter
@@ -84,34 +77,19 @@ class BarterView(ViewSet):
         Returns:
         Response -- Empty body with 204 status code
         """
-        member = Member.objects.get(user=request.auth.user)
+        requested = Service.objects.get(pk=request.data['service_requested'])
+        offered = Service.objects.get(pk=request.data['service_offered'])
 
         barter = Barter.objects.get(pk=pk)
         barter.date_posted = request.data["date_posted"]
         barter.requested_details = request.data["requested_details"]
         barter.offered_details = request.data["offered_details"]
         barter.includes_product = request.data["includes_product"]
-        barter.member = member
+        barter.service_requested = requested
+        barter.service_offered = offered
+        barter.products.set(request.data["products"])
+        barter.save()
 
-        try:
-            requested = Service.objects.get(pk=request.data["service_requested"])
-            barter.service_requested = requested
-
-            barter.save()
-        
-        except ValueError:
-            return Response({"reason": "You passed some bad data"}, status=status.HTTP_400_BAD_REQUEST)
-        
-        try:
-            offered = Service.objects.get(pk=request.data["service_offered"])
-            barter.service_offered = offered
-
-            barter.save()
-        
-        except ValueError:
-            return Response({"reason": "You passed some bad data"}, status=status.HTTP_400_BAD_REQUEST)
-
-        return Response({}, status=status.HTTP_204_NO_CONTENT)
     
     def destroy(self, request, pk=None):
         """Handle DELETE requests for a barter
@@ -146,13 +124,20 @@ class ServiceOfferedSerializer(serializers.ModelSerializer):
         model = Service
         fields = ('id', 'category', 'service', 'cost', 'per',)
 
+class BarterProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('id', 'product_category', 'name', 'instructions', 'cost',)
+
 class BarterSerializer(serializers.ModelSerializer):
     """JSON serializer for bourbons
     """
     member = MemberSerializer(many=False)
     service_requested = ServiceRequestedSerializer(many=False)
     service_offered = ServiceOfferedSerializer(many=False)
+    products = BarterProductSerializer(many=True)
+    
     class Meta:
         model = Barter
-        fields = ('id', 'date_posted', 'requested_details', 'offered_details', 'includes_product', 'service_requested', 'service_offered', 'member',)
+        fields = ('id', 'date_posted', 'requested_details', 'offered_details', 'includes_product', 'service_requested', 'service_offered', 'member', 'products',)
         depth = 1
