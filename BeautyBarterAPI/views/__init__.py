@@ -6,3 +6,5 @@ from .member_view import MemberView
 from .barter_view import BarterView
 from .product_view import ProductView
 from .service_view import ServiceView
+from .notification_view import NotificationView
+from .notification_type_view import NotificationTypeView
