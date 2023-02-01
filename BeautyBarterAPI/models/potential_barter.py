@@ -1,15 +1,21 @@
 from django.db import models
 from datetime import date
+from django.utils import timezone
 
 class PotentialBarter(models.Model):
 
     barter = models.ForeignKey("Barter", null=True, blank=True, on_delete=models.CASCADE)
-    member = models.ForeignKey("Member", null=True, blank=True, on_delete=models.CASCADE)
+    member_requesting = models.ForeignKey("Member", null=True, blank=True, on_delete=models.CASCADE, related_name='member_requesting')
+    member_requested = models.ForeignKey("Member", null=True, blank=True, on_delete=models.CASCADE,related_name='member_requested')
     accepted = models.BooleanField(default=False)
+    date_requested = models.DateTimeField(default=timezone.now)
     date_accepted = models.DateTimeField()
 
     def __str__(self):
-        return self.member.username
+        return self.member_requested.username
+    
+    def __str__(self):
+        return self.member_requesting.username
 
     @property
     def Days_till(self):
