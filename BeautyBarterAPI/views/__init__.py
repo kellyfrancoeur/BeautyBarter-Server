@@ -5,3 +5,4 @@ from .admin_view import AdminView
 from .member_view import MemberView
 from .barter_view import BarterView
 from .product_view import ProductView
+from .service_view import ServiceView
