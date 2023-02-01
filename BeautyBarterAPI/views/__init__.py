@@ -8,3 +8,4 @@ from .product_view import ProductView
 from .service_view import ServiceView
 from .notification_view import NotificationView
 from .notification_type_view import NotificationTypeView
+from .product_type_view import ProductTypeView
